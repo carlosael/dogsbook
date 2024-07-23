@@ -9,11 +9,6 @@ const Header = () => {
   const { data, userLogout } = React.useContext(UserContext);
   const navigate = useNavigate();
 
-  function logout() {
-    console.log('cliquei');
-    navigate('/login');
-  }
-
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>

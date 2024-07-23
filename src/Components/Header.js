@@ -3,9 +3,16 @@ import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Dogs } from '../Assets/dogs.svg';
 import { UserContext } from '../UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { data, userLogout } = React.useContext(UserContext);
+  const navigate = useNavigate();
+
+  function logout() {
+    console.log('cliquei');
+    navigate('/login');
+  }
 
   return (
     <header className={styles.header}>
@@ -14,10 +21,12 @@ const Header = () => {
           <Dogs />
         </Link>
         {data ? (
-          <Link className={styles.login} to='/conta'>
-            {data.nome}
+          <div>
+            <Link className={styles.login} to='/conta'>
+              {data.nome}
+            </Link>
             <button onClick={userLogout}>Sair</button>
-          </Link>
+          </div>
         ) : (
           <Link className={styles.login} to='/login'>
             Login / Criar

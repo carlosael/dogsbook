@@ -6,8 +6,7 @@ import { UserContext } from '../UserContext';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
-  const { data, userLogout } = React.useContext(UserContext);
-  const navigate = useNavigate();
+  const { data } = React.useContext(UserContext);
 
   return (
     <header className={styles.header}>
@@ -17,10 +16,9 @@ const Header = () => {
         </Link>
         {data ? (
           <div>
-            <Link className={styles.login} to='/conta'>
+            <Link className={styles.login} to='/account'>
               {data.nome}
             </Link>
-            <button onClick={userLogout}>Sair</button>
           </div>
         ) : (
           <Link className={styles.login} to='/login'>

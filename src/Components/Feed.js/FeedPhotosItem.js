@@ -1,12 +1,11 @@
 import React from 'react';
+import styles from './FeedPhotosItem.module.css';
 
 const FeedPhotosItem = ({ photo }) => {
-  console.log('AQUI PHOTO', photo);
   return (
-    <li>
-      <p>{photo.peso}</p>
+    <li className={styles.photo}>
       <img src={photo.src} alt={photo.title} />
-      <span>{photo.acessos}</span>
+      <span className={styles.visualizacao}>{photo.acessos}</span>
     </li>
   );
 };

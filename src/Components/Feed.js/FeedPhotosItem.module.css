@@ -21,7 +21,7 @@
   grid-area: 1/1;
 }
 
-.visualizacao {
+.views {
   background: rgba(0, 0, 0, 0.3);
   color: white;
   font-size: 1rem;
@@ -32,7 +32,7 @@
   display: none;
 }
 
-.visualizacao::before {
+.views::before {
   width: 16px;
   height: 10px;
   content: '';
@@ -41,6 +41,6 @@
   background: url('../../Assets/visualizacao.svg') no-repeat;
 }
 
-.photo:hover .visualizacao {
+.photo:hover .views {
   display: flex;
 }
